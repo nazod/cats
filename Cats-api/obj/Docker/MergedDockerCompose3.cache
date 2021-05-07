@@ -1,0 +1,44 @@
+services:
+  cats-api:
+    build:
+      context: C:\Fontes\cats\Cats-api
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Cats-api
+      target: base
+    container_name: Cats-api
+    depends_on:
+      db:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: catsapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/Cats-api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Fontes\cats\Cats-api:/app:rw
+    - C:\Users\Gabriel Ricarte\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Gabriel Ricarte\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Gabriel Ricarte\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Gabriel Ricarte\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Fontes\cats\Cats-api:/src:rw
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: c@ts@061015
+    image: mcr.microsoft.com/mssql/server
+version: '3.4'

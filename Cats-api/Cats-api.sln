@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cats-api", "Cats-api.csproj", "{EF872A00-5B25-49CC-9F0A-E63CCFB65FEA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{20CE02A5-4E7A-4EEC-AE7C-0031406B5105}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF872A00-5B25-49CC-9F0A-E63CCFB65FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF872A00-5B25-49CC-9F0A-E63CCFB65FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF872A00-5B25-49CC-9F0A-E63CCFB65FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF872A00-5B25-49CC-9F0A-E63CCFB65FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20CE02A5-4E7A-4EEC-AE7C-0031406B5105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CE02A5-4E7A-4EEC-AE7C-0031406B5105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CE02A5-4E7A-4EEC-AE7C-0031406B5105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CE02A5-4E7A-4EEC-AE7C-0031406B5105}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6240810-B563-40B5-9D35-A4551F2A24A2}
+	EndGlobalSection
+EndGlobal
